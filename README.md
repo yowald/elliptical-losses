@@ -27,14 +27,14 @@ A .pdf file with the figure should then be found at:</br>
 To create figures for river discharge and stocks data, use the 'make_..._fig.py' scripts in the appropriate directories (similarly to the above description).
 
 ### Important notes
-The river discharge and stocks experiments can be quite heavy on compute resources, but lighter versions can be run muich more easily.</br>
+The river discharge and stocks experiments can be quite heavy on compute resources, but lighter versions can be run with ease.</br>
 Resulting curves will be less smooth, but the general behavior of the alogrithms should be maintained.
 
-To reduce the runtime of the experiments you may try:
+To reduce the runtime of the experiments you may try to:
 * Reduce the number of seeds in the different run_experiments.sh scripts.</br>
 In stocks experiments, the outer loop of the script repeats the experiment for different subsets of stocks (chooses randomly 105 stocks as observed and 15 as targets), while the inner loop shuffles the training data and repeats the experiment for the current subset of stocks. </br>
-Hence reducing seeds in the inner loop too much may result in very jumpy curves, while reducing seeds in the outer loop too much can affect the relative positions of curves with respect to each other. Fixing the seed in the outer loop, and setting the repetitions in the inner loop to ~10, should give a good approximation for the behavior on the fixed subset of stocks.
-* Reduce the value of flags *num_steps_newton*, *num_steps_mm_newton*, *num_steps_mm*. The first two flags can be cut down by a factor of ~5, and still maintain reasonable results. Running times will be be much lower for the structured methods.
+Hence reducing seeds in the inner loop by too much may result in very jumpy curves, while reducing seeds in the outer loop too much can affect the relative positions of curves (i.e. different losses are favorable in different stock subsets). Fixing the seed in the outer loop and setting the repetitions in the inner loop to ~10, should give a good approximation for the behavior on the fixed subset of stocks.
+* Reduce the value of flags *num_steps_newton*, *num_steps_mm_newton*, *num_steps_mm*. The first two flags can be cut down by a factor of ~5, while reasonable results are maintained. This can greatly reduce running time for the structured methods.
 
 ### Requirements
 This code should be run with python 3 (tested with version 3.6.2, but should work with others)</br>
