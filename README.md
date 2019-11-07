@@ -1,6 +1,16 @@
 # elliptical-losses
 Code accompanying the paper "Globally Optimal Learning for Structured Elliptical Losses", published at NeurIPS 2019
 
+## Cite
+If you find this code useful, please consider citing our paper:
+
+>@InProceedings{ wald19globally,
+>  author = {Wald, Yoav and Noy, Nofar and Wiesel, Ami and Elidan, Gal},
+>  title = {Globally Optimal Learning for Structured Elliptical Losses},
+>  booktitle = {Neural Information Processing Systems (NeurIPS)},
+> year = {2019} 
+> }
+
 ## How to use the code
 To run the synthetic experiments, please download or clone the repository and run: </br>
 *./elliptical-losses/synthetic/synthetic_run_experiments.sh* </br>
@@ -28,7 +38,7 @@ Hence reducing seeds in the inner loop too much may result in very jumpy curves,
 
 ### Requirements
 This code should be run with python 3 (tested with version 3.6.2, but should work with others)</br>
-The following packages are used in the code: numpy, scipy, tensorflow, pickle, absl
+The following packages are used: numpy, scipy, tensorflow, pickle, absl
 
 # Acknowledgements
 We thank Guy Shalev for preparing the river discahrge dataset. Discharge levels were downloaded from the website of the United States Geological Survey (USGS), while rainfall measurements are available from the Global Satellite Mapping of Precipitation (GSMaP) product [1]. </br>
