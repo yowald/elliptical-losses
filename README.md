@@ -22,10 +22,16 @@ Resulting curves will be less smooth, but the general behavior of the alogrithms
 
 To reduce the runtime of the experiments you may try:
 * Reduce the number of seeds in the different run_experiments.sh scripts.</br>
-In stocks experiments, the outer loop of the script repeats the experiment for different subsets of stocks (chooses randomly 105 stocks as observed and 15 as targets), while the inner loop shuffles the training data and repeats the experiment for the current subset of stocks. <\br>
+In stocks experiments, the outer loop of the script repeats the experiment for different subsets of stocks (chooses randomly 105 stocks as observed and 15 as targets), while the inner loop shuffles the training data and repeats the experiment for the current subset of stocks. </br>
 Hence reducing seeds in the inner loop too much may result in very jumpy curves, while reducing seeds in the outer loop too much can affect the relative positions of curves with respect to each other. Fixing the seed in the outer loop, and setting the repetitions in the inner loop to ~10, should give a good approximation for the behavior on the fixed subset of stocks.
 * Reduce the value of flags *num_steps_newton*, *num_steps_mm_newton*, *num_steps_mm*. The first two flags can be cut down by a factor of ~5, and still maintain reasonable results. Running times will be be much lower for the structured methods.
 
 ### Requirements
 This code should be run with python 3 (tested with version 3.6.2, but should work with others)</br>
 The following packages are used in the code: numpy, scipy, tensorflow, pickle, absl
+
+# Acknowledgements
+We thank Guy Shalev for preparing the river discahrge dataset. Discharge levels were downloaded from the website of the United States Geological Survey (USGS), while rainfall measurements are available from the Global Satellite Mapping of Precipitation (GSMaP) product [1]. </br>
+We also thank Elad Mezuman and Amir Globerson for helping with early iterations of the paper and code.
+
+[1] T.  Ushio,  K.  Okamoto,  T.  Iguchi,  N.  Takahashi,  K.  Iwanami,  K.  Aonashi,  S.  Shige,H. Hashizume, T. Kubota, and T. Inoue. The global satellite mapping of precipitation (GSMaP)project.Aqua (AMSR-E), 2004
