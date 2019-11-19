@@ -19,10 +19,10 @@ Use this from the folder where the 'elliptical-losses' package is at.
 To run experiments on river discharge and stocks data, replace 'synthetic' with 'floods' or 'hugestock' in the above command.
 
 Once these scripts are run, figures can be reproduced using:</br>
-*python ./elliptic_losses/synthetic/make_syn_gauss_fig.py*</br>
+*python ./elliptical_losses/synthetic/make_syn_gauss_fig.py*</br>
 replace 'gauss' with 'gg_0_5' and 'gg_0_2' for the other plots of results on synthetic data.</br>
 A .pdf file with the figure should then be found at:</br>
-*./elliptic_losses/synthetic/results/synthetic_gaussian_data.pdf*
+*./elliptical_losses/synthetic/results/synthetic_gaussian_data.pdf*
 
 To create figures for river discharge and stocks data, use the 'make_..._fig.py' scripts in the appropriate directories (similarly to the above description).
 
